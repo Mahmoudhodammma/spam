@@ -12,24 +12,6 @@ logger = telebot.logger
 logger.setLevel(logging.DEBUG)
 @bot.message_handler(commands=["start"])
 def f(message):
-	id = message.from_user.id
-	name = message.chat.first_name
-	t = "bo0tt"
-	api = requests.get(f"https://ggrff7hnn.ml/vip1/Api(all)carlos.php?token={tok}&chaneel={t}&user_id={id}")
-	if '"result":false' in api.text:
-		p = types.InlineKeyboardButton(text="-قناه الاشتراك",url=f"https://t.me/{t}")
-		maac = types.InlineKeyboardMarkup()
-		maac.row_width = 4
-		maac.add(p)
-		bot.send_message(message.chat.id,text=f"""
-🚸| عذرا عزيزي
-🔰| عليك الاشتراك بقناة البوت لتتمكن من استخدامه
-
-- @{t}
-
-‼️| اشترك ثم ارسل /start
-""",parse_mode='html',reply_to_message_id=message.message_id, reply_markup=maac)
-	if '"result":true' in api.text:
 		id = message.from_user.id
 		name = message.chat.first_name
 		u = "https://t.me/pydroi_d_3/37"
